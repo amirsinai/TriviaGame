@@ -1,5 +1,5 @@
 body {
-  background: rgb(24, 13, 31);
+  background: rgb(229, 224, 233);
   font-family: "Nunito", Helvetica, sans-serif;
 }
 h1 {
@@ -17,5 +17,30 @@ h1 {
   display: inline-block;
   font-size: 20px;
   border-radius: 15px;
-  ali
 }
+
+.button1 .tooltiptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.button1:hover .tooltiptext {
+  visibility: visible;
+}
+
+.container {
+width: auto;
+height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+ 
