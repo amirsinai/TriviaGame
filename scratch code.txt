@@ -11,4 +11,3 @@ const questions = [
 for (let i in questions) {
     let question = questions[i].question
 
-}
