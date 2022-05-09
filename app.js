@@ -1,31 +1,32 @@
 const TechQ = [
   {
-    Question: "What year was the very first model of the iPhone released?",
+    Question: "1- What year was the very first model of the iPhone released?",
     Choices: ["2006", "2007", "2008", "2009"],
     Answer: "2007",
   },
   {
-    Question: "What's the shortcut for the “copy” function on most computers?",
+    Question:
+      "2- What's the shortcut for the “copy” function on most computers?",
     Choices: ["ctrl a", "ctrl c", "ctrl d", "ctrl x"],
     Answer: "ctrl c",
   },
   {
-    Question: "What is often seen as the smallest unit of memory?",
+    Question: "3- What is often seen as the smallest unit of memory?",
     Choices: ["nanobyte", "minibyte", "kilobyte", "megabyte"],
     Answer: "kilobyte",
   },
   {
-    Question: "Is Java a type of OS?",
+    Question: "4- Is Java a type of OS?",
     Choices: ["yes", "No"],
     Answer: "No",
   },
   {
-    Question: "Who is often called the father of the computer?",
+    Question: "5- Who is often called the father of the computer?",
     Choices: ["ssomeone1", "Charles Babbage", 'someone2,"someone3'],
     Answer: "Charles Babbage",
   },
   {
-    Question: "What does “HTTP” stand for?",
+    Question: "6- What does “HTTP” stand for?",
     Choices: [
       "HyperText Transfer Protocol",
       "High Transfer Part",
@@ -34,23 +35,23 @@ const TechQ = [
     Answer: "HyperText Transfer Protocol",
   },
   {
-    Question: "What is the name of the man who launched eBay back in 1995?",
+    Question: "7- What is the name of the man who launched eBay back in 1995?",
     Choices: ["Pierre Omidyar", "Pierre Cardin", "Elon Musk", "Bill Gates"],
     Answer: "Pierre Omidyar",
   },
   {
-    Question: "Which email service is owned by Microsoft?",
+    Question: "8- Which email service is owned by Microsoft?",
     Choices: ["yahoo", "Gmail", "Hotmail", "AOL"],
     Answer: "Hotmail",
   },
   {
     Question:
-      "Google Chrome, Safari, Firefox, and Explorer are different types of what?",
+      "9- Google Chrome, Safari, Firefox, and Explorer are different types of what?",
     Choices: ["Portals", "Local Servers", "Web browsers", "Web servicers"],
     Answer: "Web browsers",
   },
   {
-    Question: "What was Twitter’s original name?",
+    Question: "10- What was Twitter’s original name?",
     Choices: ["Twitter", "twittr", "twttr", "twtr"],
     Answer: "twttr",
   },
@@ -62,45 +63,45 @@ const TechQ = [
 
 // initial Trial
 let i = 0;
-let correctAnswer = false;
 let score = 0;
+let correctAnswer = false;
 
 function gameStart(game) {
-  let questionDiv = document.getElementById("question");
-  // .addEventListener("click", gameStart);
+  {
+    let displayedQuestion = document.getElementById("questionDiv");
+    let currentQuestion = game[i].Question;
+    console.log(game.indexOf(i));
+    console.log("test");
+    displayedQuestion.textContent = currentQuestion;
+    let dispayedChoices = document.querySelectorAll(".choiceBtnDiv");
+    // console.log(answer);
+    dispayedChoices.forEach(function (element, index) {
+      element.textContent = game[i].Choices[index];
+      element.addEventListener("click", function () {
+        console.log(index);
+        console.log(game[i].Choices[index]);
+        if (game[i].Answer == element.textContent) {
+          console.log("correct answer");
+          correctAnswer = true;
+        }
+      });
+    });
 
-  let j = 0;
-  // do {
-  // for (let j = 0; j <= game.length; j++) {
-  //   console.log(j);
-  // }
-  let currentQuestion = game[i].Question;
-  questionDiv.textContent = currentQuestion;
-  let answer = document.querySelectorAll(".choice");
-  // console.log(answer);
-  answer.forEach(function (element, index) {
-    element.textContent = game[i].Choices[index];
-    element.addEventListener("click", function () {
-      console.log(index);
-      console.log(game[i].Answer);
-      if (game[i].Answer == element.textContent) {
-        console.log("correct answer");
-        correctAnswer = true;
-        // i++;
+    let submit = document.getElementById("submit");
+    submit.addEventListener("click", function () {
+      console.log("submit button clicked");
+      i++;
+      gameStart(game);
+      if (correctAnswer == true) {
+        score++;
+        correctAnswer = false;
+        console.log("Score =" + score);
       }
     });
-  });
+  }
+  let finalSocre = document.getElementById("scoreBoard");
+  finalSocre = score;
 
-  let submit = document.getElementById("submit");
-  submit.addEventListener("click", function () {
-    console.log("submit button clicked");
-    i++;
-    gameStart(game);
-    if (correctAnswer == true) {
-      score++;
-      correctAnswer = false;
-    }
-  });
   // } ;
   // while (j <= game.length);
 
