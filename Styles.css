@@ -36,11 +36,28 @@ h1 {
 }
 
 .container {
-width: auto;
-height: auto;
-display: flex;
-justify-content: center;
-align-items: center;
-
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
- 
+
+/* show the first question by default - copied this from internet
+.question ul li:first-child {
+  display: block;
+}
+
+.question button {
+  display: block;
+  width: 280px;
+  text-align: left;
+  padding-left: 10px;
+  height: 33px;
+  margin: 10px 50px 10px 0px;
+  border: 1px solid #91d2fa;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+} */

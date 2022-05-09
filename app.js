@@ -60,10 +60,20 @@ const TechQ = [
 //   console.log(currentQuestion);
 // }
 
+// initial Trial
+let i = 0;
+let correctAnswer = false;
+let score = 0;
+
 function gameStart(game) {
   let questionDiv = document.getElementById("question");
   // .addEventListener("click", gameStart);
-  let i = 0;
+
+  let j = 0;
+  // do {
+  // for (let j = 0; j <= game.length; j++) {
+  //   console.log(j);
+  // }
   let currentQuestion = game[i].Question;
   questionDiv.textContent = currentQuestion;
   let answer = document.querySelectorAll(".choice");
@@ -75,6 +85,8 @@ function gameStart(game) {
       console.log(game[i].Answer);
       if (game[i].Answer == element.textContent) {
         console.log("correct answer");
+        correctAnswer = true;
+        // i++;
       }
     });
   });
@@ -82,9 +94,18 @@ function gameStart(game) {
   let submit = document.getElementById("submit");
   submit.addEventListener("click", function () {
     console.log("submit button clicked");
+    i++;
+    gameStart(game);
+    if (correctAnswer == true) {
+      score++;
+      correctAnswer = false;
+    }
   });
-}
+  // } ;
+  // while (j <= game.length);
 
+  //when i= length+ then stop and show the score
+}
 gameStart(TechQ);
 
 // document.getElementById("testBtn").addEventListener("click", displayDate);
