@@ -43,6 +43,43 @@ h1 {
   align-items: center;
 }
 
+.question-container {
+  background-color: #26e485; /* Green */
+  border: none;
+  color: rgb(255, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.choices-container {
+  background-color: #26e485; /* Green */
+  block-size: auto;
+  border: none;
+  color: rgb(255, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.next {
+  background-color: #26e485; /* Green */
+  border: none;
+  color: rgb(255, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
 /* show the first question by default - copied this from internet
 .question ul li:first-child {
   display: block;

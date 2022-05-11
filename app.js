@@ -82,6 +82,7 @@ function gameStart(game) {
         console.log(game[i].Choices[index]);
         if (game[i].Answer == element.textContent) {
           console.log("correct answer");
+          alert("your answer was corerct");
           correctAnswer = true;
         }
       });
@@ -100,15 +101,19 @@ function gameStart(game) {
     });
   }
   let finalSocre = document.getElementById("scoreBoard");
+  scoreBoard.textContent = finalSocre;
   finalSocre = score;
+  scoreBoard.textContent = finalSocre;
 
   // } ;
   // while (j <= game.length);
 
   //when i= length+ then stop and show the score
 }
-gameStart(TechQ);
 
+let selectedGame = document.getElementById("techQ");
+submit.addEventListener("click", gameStart(TechQ));
+// gameStart(TechQ);
 // document.getElementById("testBtn").addEventListener("click", displayDate);
 
 // function displayDate() {
